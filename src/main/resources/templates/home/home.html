@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="common/layout">
 <head>
     <meta charset="UTF-8">
     <title>베스트안전</title>
@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+<th:block layout:fragment="content">
+    컨텐츠
+</th:block>
 </body>
 </html>
