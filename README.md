@@ -1,2 +1,15 @@
 # bestsafety
-bestsafety official website
+베스트안전 공식 사이트
+
+## 기술 스택
+Java, Spring Boot, MySQL
+
+## 메뉴
+- 회사 소개
+    - 베스트안전
+    - 베스트산업안전
+    - 세이프21
+- 사업 안내
+- 실적
+- 상담(전화번호, 주소), 문의
+- 공지사항
