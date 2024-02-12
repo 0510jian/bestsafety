@@ -1,7 +1,14 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     width: 100%;
+}
+
+html {
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#3a3a4a;
 }
 
 ul, ol {
@@ -10,31 +17,29 @@ ul, ol {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #3a3a4a;
 }
 
 .header {
-    background-color: aqua;
     width: 100%;
     height: 100px;
     
-    margin-top: 20px;
+    margin-top: 2rem;
+
+    text-align: center;
 }
 
 .header_item {
     width: auto;
     display: inline-block;
+    vertical-align: middle;
 }
 
 #logo {
-    position: left;
+    margin-left: 5rem;
 
     width: auto;
     height: 100%;
-
-    background-color: red;
-
-    vertical-align: middle;
 }
 
 #logo img {
@@ -43,12 +48,32 @@ a {
 }
 
 #nav {
-    background-color: brown;
+    width: auto;
+    min-width: 800px;
+
+    margin: 0 5rem;
 }
 
 .menu_item {
-    width: auto;
+    width: 120px;
     display: inline-block;
 
-    background-color: beige;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 3rem;    
+}
+
+.menu_item a {
+    padding: 0.5rem 0;
+    display: inline-block;
+    width: 90%;
+
+    border-width: 0 0 4px;
+    border-style: solid;
+    border-color: rgba(42, 94, 184, 0);
+}
+
+.menu_item a:hover {
+    color: rgb(42, 94, 184);
+    border-color: rgba(42, 94, 184, 255);
 }
