@@ -87,3 +87,36 @@ a {
     background-image: url();
     background-size: cover;
 }
+
+.board {
+    width: 100%;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.notice {
+    width: 500px;
+    height: 500px;
+    background-color: lightpink;
+    display: inline-block;
+    margin: 1rem 3rem;
+}
+
+.shortcuts {
+    width: 480px;
+    height: 480px;
+    background-color:aquamarine;
+    display: inline-block;
+    margin: 1rem 3rem;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.shortcut {
+    width: 220px;
+    height: 220px;
+    background-color: gray;
+    display: inline-block;
+    margin: 9px;
+    border-radius: 10px;
+}
