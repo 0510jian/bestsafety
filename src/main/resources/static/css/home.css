@@ -1,5 +1,9 @@
+.main_container {
+    /*width: 100%;*/
+}
+
 .banner {
-    width: 100%;
+    /*width: 100%;*/
     height: 550px;
     background-color:lightskyblue;
     background-image: url();
@@ -7,7 +11,7 @@
 }
 
 .board {
-    width: 100%;
+    /*width: 100%;*/
     text-align: center;
     margin: 5rem 0;
 }
@@ -37,4 +41,37 @@
     display: inline-block;
     margin: 9px;
     border-radius: 10px;
+}
+
+/* tablet */
+@media all and (max-width: 768px) {
+    .banner {
+        height: 400px;
+    }
+
+    .notice {
+        width: 90%;
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    .shortcuts {
+        width: 90%;
+        height: auto;
+        margin: 1rem 0;
+        padding: 0;
+    }
+
+    .shortcut {
+        width: 40%;
+        height: auto;
+        margin: 9px 0;
+    }
+}
+
+/* mobile */
+@media all and (max-width: 480px) {
+    .shortcut {
+        width: 80%;
+    }
 }
