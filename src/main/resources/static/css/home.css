@@ -43,22 +43,22 @@
     border-radius: 10px;
 }
 
-/* tablet */
-@media all and (max-width: 768px) {
+/* tablet landscape */
+@media all and (max-width: 1024px) {
     .banner {
         height: 400px;
     }
 
     .notice {
-        width: 90%;
+        width: 40%;
         height: auto;
-        margin: 1rem 0;
+        margin: 1rem 1rem;
     }
 
     .shortcuts {
-        width: 90%;
+        width: 40%;
         height: auto;
-        margin: 1rem 0;
+        margin: 1rem 1rem;
         padding: 0;
     }
 
@@ -66,6 +66,19 @@
         width: 40%;
         height: auto;
         margin: 9px 0;
+    }
+}
+
+/* tablet */
+@media all and (max-width: 768px) {
+    .notice {
+        width: 90%;
+        margin: 1rem 0;
+    }
+
+    .shortcuts {
+        width: 90%;
+        margin: 1rem 0;
     }
 }
 

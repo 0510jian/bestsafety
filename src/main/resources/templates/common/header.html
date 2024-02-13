@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="common/layout">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/main/resources/static/css/default.css">
     <link rel="stylesheet" href="/src/main/resources/static/css/header.css">
 </head>
@@ -31,7 +33,9 @@
                 </ul>
             </div>
         </div>
-        <div class="header_item" id="mob_cate_button"></div>
+        <div class="header_item" id="mob_cate_button">
+            <img src="/src/main/resources/static/img/menu.png">
+        </div>
     </div>
 </th:block>
 </body>
