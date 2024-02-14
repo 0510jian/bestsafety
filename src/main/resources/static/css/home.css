@@ -1,112 +1,106 @@
-.main_container {
-    /*width: 100%;*/
+.main {
+    width: auto;
 }
 
-.banner {
-    /*width: 100%;*/
+.banners {
+    width: auto;
     height: 550px;
+
     background-color:lightskyblue;
     background-image: url();
     background-size: cover;
 }
 
+.boards {
+    width: auto;
+    height: auto;
+    padding: 5rem 1rem;
+
+    background-color: #e3e3e3;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .board {
-    /*width: 100%;*/
-    text-align: center;
-    margin: 5rem 0;
+    width: -webkit-fill-available;
+    max-width: min(40%, 480px);
+    padding: 1rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+
+    flex: 1;
 }
 
-.notice {
-    width: 500px;
-    height: 500px;
-    background-color: lightpink;
-    display: inline-block;
-    margin: 1rem 3rem;
+#notice {
+    background-color: white;
+    text-align: left;
 }
 
-.shortcuts {
-    width: 480px;
-    height: 480px;
+.notice_title {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.notice_contents {
+    margin-top: 2em;
+}
+
+.notice_content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    margin: 1em 0;
+}
+
+#shortcuts {
     background-color:aquamarine;
-    display: inline-block;
-    margin: 1rem 3rem;
-    vertical-align: top;
-    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
 }
 
 .shortcut {
-    width: 220px;
-    height: 220px;
     background-color: gray;
-    display: inline-block;
-    margin: 9px;
     border-radius: 10px;
+
+    text-align: center;
 }
 
-.mini_banner {
+.mini_banners {
     background-color: red;
-    width: 100%;
+    width: auto;
     height: 40px;
-}
-
-/* pc small */
-@media all and (max-width: 1200px) {
-    .board {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .shortcut {
-        width:44%;
-    }
 }
 
 
 /* tablet landscape */
 @media all and (max-width: 1024px) {
-    .board {
-        display: inline-block;
-    }
-    .banner {
-        height: 400px;
-    }
-
-    .notice {
-        width: 40%;
-        height: auto;
-        margin: 1rem 1rem;
-    }
-
-    .shortcuts {
-        width: 40%;
-        height: auto;
-        margin: 1rem 1rem;
-        padding: 0;
-    }
-
-    .shortcut {
-        width: 40%;
-        height: auto;
-        margin: 9px 0;
-    }
 }
 
 /* tablet */
 @media all and (max-width: 768px) {
-    .notice {
-        width: 90%;
-        margin: 1rem 0;
+    .boards {
+        display: block;
+        text-align: -webkit-center;
     }
 
-    .shortcuts {
-        width: 90%;
-        margin: 1rem 0;
+    .board {
+        max-width: 80%;
+        width: -webkit-fill-available;
+        margin: 0 0;
+    }
+
+    #notice {
+        margin-bottom: 1rem;
     }
 }
 
 /* mobile */
 @media all and (max-width: 480px) {
-    .shortcut {
-        width: 80%;
+    #shortcuts {
+        grid-template-columns: 1fr;
     }
 }
