@@ -25,18 +25,22 @@
 }
 
 #nav {
-    width: auto;
+    width: 50%;
     margin-left: 5rem;
     /*margin: 0 5rem;*/
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu_item {
     width: auto;
     display: inline-block;
-
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0 1rem;    
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .menu_item a {
@@ -55,8 +59,8 @@
 }
 
 #mob_cate_button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: none;
 }
 
@@ -67,7 +71,6 @@
 
 /* tablet landscape */
 @media all and (max-width: 1024px) {
-
     .header {
         width: 100%;
         height: 80px;
@@ -97,8 +100,8 @@
 
     #mob_cate_button img {
         position: relative;
-        top: 15%;
-        height: 50px;
+        top: 20%;
+        height: 40px;
     }
 }
 
