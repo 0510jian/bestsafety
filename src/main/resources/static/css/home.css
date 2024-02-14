@@ -43,6 +43,12 @@
     border-radius: 10px;
 }
 
+.mini_banner {
+    background-color: red;
+    width: 100%;
+    height: 40px;
+}
+
 /* pc small */
 @media all and (max-width: 1200px) {
     .board {
