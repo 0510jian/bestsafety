@@ -43,8 +43,24 @@
     border-radius: 10px;
 }
 
+/* pc small */
+@media all and (max-width: 1200px) {
+    .board {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .shortcut {
+        width:45%;
+    }
+}
+
+
 /* tablet landscape */
 @media all and (max-width: 1024px) {
+    .board {
+        display: inline-block;
+    }
     .banner {
         height: 400px;
     }
