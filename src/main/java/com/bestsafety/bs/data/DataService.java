@@ -1,6 +1,7 @@
 package com.bestsafety.bs.data;
 
 import com.bestsafety.bs.dto.Content;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

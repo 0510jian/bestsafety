@@ -20,11 +20,12 @@ public class DataController {
     @GetMapping("/data")
     public ModelAndView data(
             HttpServletRequest request,
-            @RequestParam(name = "page", defaultValue = "0") int page) throws ParseException {
+            @RequestParam(name = "page", defaultValue = "1") int page) throws ParseException {
         ModelAndView mv = new ModelAndView("/data/data.html");
 
-        Page<Content> contents = dataService.getContents(page);
+        Page<Content> contents = dataService.getContents(page-1);
         mv.addObject("contents", contents);
+        mv.addObject("count", page);
 
         return mv;
     }

@@ -34,8 +34,8 @@
 }
 
 .board_titlebar {
-    border-top: 2px solid black;
-    border-bottom: 1px solid black;
+    border-top: 2px solid gray;
+    border-bottom: 1px solid gray;
     background-color: rgb(240, 240, 240);
     
     width: 100%;
@@ -53,7 +53,7 @@
 }
 
 .board_content {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(224, 224, 224);
 }
 
 .id {
@@ -75,5 +75,14 @@
 .page-item, .page_count {
     width: auto;
     display: inline-block;
-    padding: 0 1em;
+    padding: 0.1em 0.5em;
+    margin: 0 1em;
+
+    border: 0.5px solid gray;
+}
+
+.pagination {
+    text-align: center;
+    padding: 1em 0;
+    border-top: 1px solid gray;
 }

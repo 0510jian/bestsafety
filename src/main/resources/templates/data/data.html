@@ -35,16 +35,17 @@
         </ul>
         <div class="board_contents">
           <th:block th:unless="${contents.isEmpty()}">
-            <ul class="board_content">
-              <th:block th:each="content:${contents}">
+            <th:block th:each="content:${contents}">
+              <ul class="board_content">
                 <li class="id" th:text="${content.id}">1</li>
-                <li class="title" th:text="${content.title}">제목입니다</li>
+                <a th:href="${'data/' + content.id}"><li class="title" th:text="${content.title}">제목입니다</li></a>
                 <li class="create_date" th:text="${content.createDate}">2000-01-01</li>
                 <li class="view_count" th:text="${content.viewCount}">5</li>
-              </th:block>
-            </ul>
+              </ul>
+            </th:block>
 
             <ul class="pagination">
+              <input type="hidden" value="">
               <li class="page-item" th:if="${contents.hasPrevious} ? 'disabled'">
                 <a class="page-link" th:href="@{|?page=0|}">
                   <span>&lt;&lt;</span>
@@ -55,9 +56,9 @@
                   <span>&lt;</span>
                 </a>
               </li>
-              <li class="page_count" th:each="page: ${#numbers.sequence(0, contents.totalPages -1)}"
+              <li class="page_count" th:id="${'count' + (page+1)}" th:each="page: ${#numbers.sequence(0, contents.totalPages -1)}"
                   th:if="${page >= contents.number - 5 and page <= contents.number+5}">
-                <a th:text="${page + 1}" th:id="${'page' + page}" th:href="'?page=' + ${page}"></a>
+                <a th:text="${page + 1}" th:id="${'page' + (page+1)}" th:href="'?page=' + ${page+1}"></a>
               </li>
               <li class="page-item" th:if="${contents.hasNext} ? 'disabled'">
                 <a class="page-link" th:href="@{|?page=${contents.number+1}|}">
@@ -74,8 +75,18 @@
         </div>
       </div>
     </div>
-    
   </div>
 </th:block>
 </body>
 </html>
+
+<script>
+  window.onload = function() {
+    changePageCount();
+  }
+
+  function changePageCount() {
+    document.getElementById("count" + [[${count}]]).style.background = "gray";
+    document.getElementById("page" + [[${count}]]).style.color = "white";
+  }
+</script>
