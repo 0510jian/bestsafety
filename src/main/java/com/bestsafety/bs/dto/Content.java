@@ -1,11 +1,13 @@
 package com.bestsafety.bs.dto;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
 
 import java.util.Date;
 
@@ -15,6 +17,7 @@ import java.util.Date;
 @ToString
 
 @Entity
+@DynamicInsert
 public class Content {
     @Id
     int id;

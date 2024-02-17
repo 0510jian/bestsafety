@@ -16,7 +16,7 @@ public class DataService {
     @Autowired
     private com.bestsafety.bs.repository.ContentRepository contentRepository;
 
-    public Page<Content> getContent(int page) throws ParseException {
+    public Page<Content> getContents(int page) throws ParseException {
         Pageable pageable = PageRequest.of(page,10);
         Page<Content> contents = contentRepository.findAll(pageable);
 

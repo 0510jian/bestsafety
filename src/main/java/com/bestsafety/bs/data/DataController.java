@@ -23,7 +23,7 @@ public class DataController {
             @RequestParam(name = "page", defaultValue = "0") int page) throws ParseException {
         ModelAndView mv = new ModelAndView("/data/data.html");
 
-        Page<Content> contents = dataService.getContent(page);
+        Page<Content> contents = dataService.getContents(page);
         mv.addObject("contents", contents);
 
         return mv;
