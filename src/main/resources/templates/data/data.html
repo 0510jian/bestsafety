@@ -15,7 +15,39 @@
 <body>
 <th:block layout:fragment="content">
   <div class="main">
-
+    <div class="board_header" id="data">
+      <div class="board_header_text">
+        <div class="board_header_title" th:value="${boardTitle}">
+          자료실
+        </div>
+        <div class="board_header_address">
+          <span>홈</span> > <span>자료실</span>
+        </div>
+      </div>
+    </div>
+    <div class="board_main">
+      <div class="board_list">
+        <ul class="board_titlebar">
+          <li class="id">번호</li>
+          <li class="title">제목</li>
+          <li class="create_date">등록일</li>
+          <li class="view_count">조회</li>
+        </ul>
+        <div class="board_contents">
+          <th:block th:if="${size > 0}">
+            <ul class="board_content">
+              <th:block th:each="content:${contents}">
+                <li class="id" th:value="${content.id}">1</li>
+                <li class="title" th:value="${content.title}">제목입니다</li>
+                <li class="create_date" th:value="${content.createDate}">2000-01-01</li>
+                <li class="view_count" th:value="${content.viewCount}">5</li>
+              </th:block>
+            </ul>
+          </th:block>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </th:block>
 </body>
