@@ -27,7 +27,6 @@ public class DataTest {
             content = new Content();
             content.setId(i+1);
             content.setTitle("제목입니다" + (i+1));
-            content.setCreateDate(String.valueOf(new Timestamp(System.currentTimeMillis())));
             contentRepository.save(content);
         }
 
@@ -36,7 +35,7 @@ public class DataTest {
 
     @Test
     void changeDateFormatTest() throws ParseException {
-        Date beforeDate = new Date(System.currentTimeMillis());
+        String beforeDate = "2022-2-1 19:24:30";
         String afterDate = dataService.changeDateFormat(beforeDate, "yyyy-MM-dd");
         System.out.println("changeDateFormatTest의 결과 : " + afterDate + " (orig. " + beforeDate + ")");
     }

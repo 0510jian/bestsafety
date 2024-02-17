@@ -16,14 +16,23 @@ public class DataService {
     @Autowired
     private com.bestsafety.bs.repository.ContentRepository contentRepository;
 
-    public Page<Content> getContent(int page) {
+    public Page<Content> getContent(int page) throws ParseException {
         Pageable pageable = PageRequest.of(page,10);
-        return contentRepository.findAll(pageable);
+        Page<Content> contents = contentRepository.findAll(pageable);
+
+        for(Content content : contents) {
+            String createDate = content.getCreateDate();
+            content.setCreateDate(changeDateFormat(createDate, "yyyy-MM-dd"));
+        }
+
+        return contents;
     }
 
-    public String changeDateFormat(Date beforeDate, String format) throws ParseException {
+    public String changeDateFormat(String beforeDate, String format) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
-        String afterDate = simpleDateFormat.format(beforeDate);
+        Date date = simpleDateFormat.parse(beforeDate);
+
+        String afterDate = simpleDateFormat.format(date);
 
         return afterDate;
     }

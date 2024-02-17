@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.ParseException;
+
 @Controller
 public class DataController {
 
@@ -18,7 +20,7 @@ public class DataController {
     @GetMapping("/data")
     public ModelAndView data(
             HttpServletRequest request,
-            @RequestParam(name = "page", defaultValue = "0") int page) {
+            @RequestParam(name = "page", defaultValue = "0") int page) throws ParseException {
         ModelAndView mv = new ModelAndView("/data/data.html");
 
         Page<Content> contents = dataService.getContent(page);
