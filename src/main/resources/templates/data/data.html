@@ -37,10 +37,10 @@
           <th:block th:unless="${contents.isEmpty()}">
             <ul class="board_content">
               <th:block th:each="content:${contents}">
-                <li class="id" th:value="${content.id}">1</li>
-                <li class="title" th:value="${content.title}">제목입니다</li>
-                <li class="create_date" th:value="${content.createDate}">2000-01-01</li>
-                <li class="view_count" th:value="${content.viewCount}">5</li>
+                <li class="id" th:text="${content.id}">1</li>
+                <li class="title" th:text="${content.title}">제목입니다</li>
+                <li class="create_date" th:text="${content.createDate}">2000-01-01</li>
+                <li class="view_count" th:text="${content.viewCount}">5</li>
               </th:block>
             </ul>
           </th:block>
