@@ -34,7 +34,7 @@
           <li class="view_count">조회</li>
         </ul>
         <div class="board_contents">
-          <th:block th:if="${size > 0}">
+          <th:block th:unless="${contents.isEmpty()}">
             <ul class="board_content">
               <th:block th:each="content:${contents}">
                 <li class="id" th:value="${content.id}">1</li>
