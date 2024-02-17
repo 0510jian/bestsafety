@@ -8,12 +8,14 @@
 <th:block th:fragment="headerFragment">
     <div class="header">
         <div class="header_item" id="logo">
-            <img th:src="@{/img/logo.png}">
+            <a href="/">
+                <img th:src="@{/img/logo.png}">
+            </a>
         </div>
         <div class="header_item" id="nav">
             <ul class="menu">
                 <li class="menu_item">
-                    <a href="">회사소개</a>
+                    <a href="company">회사소개</a>
                 </li>
                 <li class="menu_item">
                     <a href="">조직도</a>
@@ -22,10 +24,10 @@
                     <a href="">실적</a>
                 </li>
                 <li class="menu_item">
-                    <a href="">자료실</a>
+                    <a href="data">자료실</a>
                 </li>
                 <li class="menu_item">
-                    <a href="">문의</a>
+                    <a href="contact">문의</a>
                 </li>
             </ul>
         </div>
