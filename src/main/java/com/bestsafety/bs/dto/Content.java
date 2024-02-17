@@ -21,7 +21,7 @@ public class Content {
 
     String title;
     String content;
-    Date createDate;
-    Date updateDate;
+    String createDate;
+    String updateDate;
     int viewCount;
 }

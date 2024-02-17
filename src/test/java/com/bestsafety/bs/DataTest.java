@@ -8,17 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.util.Date;
 
 @SpringBootTest
 public class DataTest {
-    DataService dataService = new DataService();
 
+    @Autowired
+    DataService dataService;
     @Autowired
     ContentRepository contentRepository;
     @Test
     void insertDummyContentTest() {
-        System.out.println("# createDummyContentTest 시작");
-
         int num = (int)(Math.random()*30+20);
 
         Content content;
@@ -26,10 +27,17 @@ public class DataTest {
             content = new Content();
             content.setId(i+1);
             content.setTitle("제목입니다" + (i+1));
-            content.setCreateDate(new Timestamp(System.currentTimeMillis()));
+            content.setCreateDate(String.valueOf(new Timestamp(System.currentTimeMillis())));
             contentRepository.save(content);
         }
 
         contentRepository.findAll();
+    }
+
+    @Test
+    void changeDateFormatTest() throws ParseException {
+        Date beforeDate = new Date(System.currentTimeMillis());
+        String afterDate = dataService.changeDateFormat(beforeDate, "yyyy-MM-dd");
+        System.out.println("changeDateFormatTest의 결과 : " + afterDate + " (orig. " + beforeDate + ")");
     }
 }

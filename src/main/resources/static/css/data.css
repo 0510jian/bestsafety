@@ -71,3 +71,9 @@
 .view_count {
     width: 10%;
 }
+
+.page-item, .page_count {
+    width: auto;
+    display: inline-block;
+    padding: 0 1em;
+}
