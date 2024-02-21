@@ -48,10 +48,10 @@
           <th:block th:unless="${contents.isEmpty()}">
             <th:block th:each="content:${contents}">
               <ul class="board_content">
-                <li class="id" th:text="${content.id}">1</li>
-                <a th:href="${'data/' + content.id}"><li class="title" th:text="${content.title}">제목입니다</li></a>
-                <li class="create_date" th:text="${content.createDate}">2000-01-01</li>
-                <li class="view_count" th:text="${content.viewCount}">5</li>
+                <li class="id" th:text="${content.id}">0</li>
+                <a th:href="${'data/' + content.id}"><li class="title" th:text="${content.title}">제목</li></a>
+                <li class="create_date" th:text="${content.createDate}">1900-01-01</li>
+                <li class="view_count" th:text="${content.viewCount}">0</li>
               </ul>
             </th:block>
 
@@ -69,7 +69,7 @@
               </li>
               <li class="page_count" th:id="${'count' + (page+1)}" th:each="page: ${#numbers.sequence(0, contents.totalPages -1)}"
                   th:if="${page >= contents.number - 5 and page <= contents.number+5}">
-                <a th:text="${page + 1}" th:id="${'page' + (page+1)}" th:href="'?page=' + ${page+1}"></a>
+                <a th:text="${page + 1}" th:id="${'page' + (page+1)}" th:href="'?page=' + ${page+1}">1</a>
               </li>
               <li class="page-item" th:if="${contents.hasNext} ? 'disabled'">
                 <a class="page-link" th:href="@{|?page=${contents.number+2}|}">

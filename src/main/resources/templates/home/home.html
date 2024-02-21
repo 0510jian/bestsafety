@@ -5,6 +5,8 @@
     <title>베스트안전</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/main/resources/static/css/default.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/home.css">
     <link rel="stylesheet" th:href="@{/css/default.css}">
     <link rel="stylesheet" th:href="@{/css/home.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
@@ -16,6 +18,15 @@
         <div class="banners">
         </div>
         <div class="boards">
+            <div class="field">
+                <div class="field_shortcut">베스트<br/>안전</div>
+                <div class="field_shortcut">베스트<br/>전기통신<br/>소방안전</div>
+                <div class="field_shortcut">베스트<br/>건설안전</div>
+                <div class="field_shortcut">베스트<br/>안전진단</div>
+                <div class="field_shortcut">세이프21</div>
+            </div>
+        </div>
+        <div class="boards">
             <div class="board" id="notice">
                 <div class="notice_title">공지사항</div>
                 <ul class="notice_contents">
@@ -25,16 +36,29 @@
                     <li class="notice_content">4</li>
                     <li class="notice_content">5</li>
                     <li class="notice_content">6</li>
-                    <li class="notice_content">7</li>
-                    <li class="notice_content">8</li>
+
                 </ul>
             </div>
-            <ul class="board" id="shortcuts">
-                <li class="shortcut">a</li>
-                <li class="shortcut">b</li>
-                <li class="shortcut">c</li>
-                <li class="shortcut">d</li>
-            </ul>
+            <div class="board" id="performance">
+                <div class="performance_title">주요실적</div>
+                <div class="gallery">
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
         </div>
         <div class="mini_banners">
             

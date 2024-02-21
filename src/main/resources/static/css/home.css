@@ -7,19 +7,41 @@
     height: 550px;
 
     background-color:lightskyblue;
-    background-image: url();
+
+    background-image: url("/img/train-8517089_1920.jpg");
     background-size: cover;
 }
 
 .boards {
-    width: auto;
+    width: 70%;
     height: auto;
     padding: 5rem 1rem;
-
-    background-color: #e3e3e3;
+    padding-bottom: 1em;
+    margin: 0 auto;
 
     display: flex;
     justify-content: space-evenly;
+}
+
+.field {
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.field_shortcut {
+    box-sizing: border-box;
+
+    width: 15%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #efefef;
+
 }
 
 .board {
@@ -27,19 +49,34 @@
     max-width: min(40%, 480px);
     padding: 1rem;
     margin: 0 1rem;
-    border-radius: 5px;
 
     flex: 1;
 }
 
 #notice {
-    background-color: white;
+    background-color: #185b9f;
+    color: white;
     text-align: left;
+
+    border-radius: 50px 10px 10px 10px;
 }
 
 .notice_title {
-    font-size: 2em;
-    font-weight: 700;
+    font-size: 2.2em;
+    font-weight: 900;
+    text-align: center;
+
+    padding: 0.5em 0;
+}
+
+.performance_title {
+    font-size: 2.2em;
+    font-weight: 900;
+    text-align: center;
+
+    padding: 0.5em 0;
+
+    color: #4d4d4d;
 }
 
 .notice_contents {
@@ -54,12 +91,9 @@
     margin: 1em 0;
 }
 
-#shortcuts {
-    background-color:aquamarine;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
+#performance {
+    border: 2px solid #bdbdbd;
+    border-radius: 10px 10px 50px 10px;
 }
 
 .shortcut {
@@ -73,6 +107,58 @@
     background-color: red;
     width: auto;
     height: 40px;
+}
+
+
+
+.gallery {
+    width: 100%;
+    height: 400px;
+    background-color: pink;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+.slides {
+    width: 100%;
+    height: 90%;
+    background-color: gray;
+}
+
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -2em;
+    padding: 1em;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.next {
+    right: 0;
+}
+
+.dots {
+    display: block;
+    text-align: center;
+    margin: 1em 0;
+    margin-bottom: 1em;
+}
+
+.dot {
+    height: 1em;
+    width: 1em;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
 
