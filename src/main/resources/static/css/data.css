@@ -75,8 +75,8 @@
 .page-item, .page_count {
     width: auto;
     display: inline-block;
-    padding: 0.1em 0.5em;
-    margin: 0 1em;
+    padding: 0.1em 0.3em;
+    margin: 0.5em;
 
     border: 0.5px solid gray;
 }

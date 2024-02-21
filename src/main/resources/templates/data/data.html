@@ -47,12 +47,12 @@
             <ul class="pagination">
               <input type="hidden" value="">
               <li class="page-item" th:if="${contents.hasPrevious} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=0|}">
+                <a class="page-link" th:href="@{|?page=1|}">
                   <span>&lt;&lt;</span>
                 </a>
               </li>
               <li class="page-item" th:if="${contents.hasPrevious} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${contents.number -1}|}">
+                <a class="page-link" th:href="@{|?page=${contents.number}|}">
                   <span>&lt;</span>
                 </a>
               </li>
@@ -61,12 +61,12 @@
                 <a th:text="${page + 1}" th:id="${'page' + (page+1)}" th:href="'?page=' + ${page+1}"></a>
               </li>
               <li class="page-item" th:if="${contents.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${contents.number+1}|}">
+                <a class="page-link" th:href="@{|?page=${contents.number+2}|}">
                   <span>&gt;</span>
                 </a>
               </li>
               <li class="page-item" th:if="${contents.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${contents.totalPages -1}|}">
+                <a class="page-link" th:href="@{|?page=${contents.totalPages}|}">
                   <span>&gt;&gt;</span>
                 </a>
               </li>
