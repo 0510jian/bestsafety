@@ -20,10 +20,19 @@ public class DataController {
     @GetMapping("/data")
     public ModelAndView data(
             HttpServletRequest request,
-            @RequestParam(name = "page", defaultValue = "1") int page) throws ParseException {
+            @RequestParam(name = "page", defaultValue = "1") int page,
+            @RequestParam(name = "select", defaultValue = "") String select,
+            @RequestParam(name = "search", defaultValue = "") String search
+    ) throws ParseException {
         ModelAndView mv = new ModelAndView("/data/data.html");
 
-        Page<Content> contents = dataService.getContents(page-1);
+        Page<Content> contents;
+        if(!search.equals("")) {
+            contents = dataService.getContents(page-1, select, search);
+        } else {
+            contents = dataService.getContents(page-1);
+        }
+
         mv.addObject("contents", contents);
         mv.addObject("count", page);
 

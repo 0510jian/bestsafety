@@ -22,6 +22,7 @@ public class Content {
     @Id
     int id;
 
+    @Column(name="title")
     String title;
     String content;
     String createDate;

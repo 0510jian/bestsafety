@@ -86,3 +86,37 @@
     padding: 1em 0;
     border-top: 1px solid gray;
 }
+
+.search {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.search_select {
+    width: 6em;
+    height: 2.6em;
+    padding: 0.3em;
+    margin-right: 0.5em;
+    border-radius: 0;
+}
+
+.search_input {
+    height: 2.5em;
+    width: 20em;
+
+    border: 1px solid gray;
+    padding: 0 0.6em;
+    margin-right: 0.5em;
+}
+
+.search_button {
+    height: 2.7em;
+    line-height: 2.6em;
+    vertical-align: middle;
+
+    border: none;
+    background-color: gray;
+    padding: 0 1.5em;
+    color: white;
+}

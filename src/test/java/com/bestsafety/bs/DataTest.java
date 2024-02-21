@@ -39,4 +39,9 @@ public class DataTest {
         String afterDate = dataService.changeDateFormat(beforeDate, "yyyy-MM-dd");
         System.out.println("changeDateFormatTest의 결과 : " + afterDate + " (orig. " + beforeDate + ")");
     }
+
+    @Test
+    void getContentsTest() throws ParseException {
+        dataService.getContents(1, "제목", "3");
+    }
 }

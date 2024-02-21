@@ -33,6 +33,26 @@ public class DataService {
         return contents;
     }
 
+    public Page<Content> getContents(int page, String select, String search) throws ParseException {
+        Pageable pageable = PageRequest.of(page,10);
+
+        Page<Content> contents = null;
+        search = "%" + search + "%";
+
+        if(select.equals("제목")) {
+            contents = contentRepository.findByTitleLike(pageable, search);
+        } else if(select.equals("내용")) {
+            contents = contentRepository.findByContentLike(pageable, search);
+        }
+
+        for(Content content : contents) {
+            String createDate = content.getCreateDate();
+            content.setCreateDate(changeDateFormat(createDate, "yyyy-MM-dd"));
+        }
+
+        return contents;
+    }
+
     /*
      * 날짜/시간을 지정된 format으로 변환하는 함수
      *
