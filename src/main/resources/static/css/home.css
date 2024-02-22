@@ -140,6 +140,10 @@
     opacity: 50%;
 }
 
+.prev:hover, .next:hover {
+    opacity: 100%;
+}
+
 .next {
     right: 0;
 }

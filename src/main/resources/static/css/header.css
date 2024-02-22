@@ -45,18 +45,36 @@
 }
 
 .menu_item a {
+    position: relative;
+
     padding: 0.5rem 0;
     display: inline-block;
     width: 90px;
+}
 
-    border-width: 0 0 4px;
-    border-style: solid;
-    border-color: rgba(42, 94, 184, 0);
+.menu_item a:after {
+    position: absolute;
+
+    content: "";
+    width: 100%;
+    height: 0.2em;
+    left: 0;
+    bottom: -0.1em;
+    border-radius: 0.1em;
+    background-color: rgba(42, 94, 184, 255);
+    transition: all 0.2s ease-in-out;
+
+    visibility: hidden;
+    transform: scaleX(0);
 }
 
 .menu_item a:hover {
     color: rgb(42, 94, 184);
-    border-color: rgba(42, 94, 184, 255);
+}
+
+.menu_item a:hover:after {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 #mob_cate_button {
