@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/main/resources/static/css/default.css">
     <link rel="stylesheet" href="/src/main/resources/static/css/home.css">
+    <script src="/src/main/resources/static/js/home.js"></script>
+
     <link rel="stylesheet" th:href="@{/css/default.css}">
     <link rel="stylesheet" th:href="@{/css/home.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <script th:src="@{/js/home.js}"></script>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -42,23 +45,22 @@
             <div class="board" id="performance">
                 <div class="performance_title">주요실적</div>
                 <div class="gallery">
-                    <div class="slide"></div>
-                    <div class="slide"></div>
-                    <div class="slide"></div>
-                    <div class="slide"></div>
-                    <div class="slide"></div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="slide" style="background: red"></div>
+                    <div class="slide" style="background: yellow"></div>
+                    <div class="slide" style="background: green"></div>
+                    <div class="slide" style="background: blue"></div>
+                    <div class="slide" style="background: purple"></div>
+                    <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="moveSlide(1)">&#10095;</a>
                 </div>
                 <div class="dots">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
                 </div>
             </div>
-
         </div>
         <div class="mini_banners">
             
