@@ -39,7 +39,6 @@
                     <li class="notice_content">4</li>
                     <li class="notice_content">5</li>
                     <li class="notice_content">6</li>
-
                 </ul>
             </div>
             <div class="board" id="performance">
@@ -62,9 +61,25 @@
                 </div>
             </div>
         </div>
-        <div class="mini_banners">
-            
+        <div class="boards" id="rolling">
+            <a onclick="rollingLeft()">&#10094;</a>
+            <div class="wrap" id="wrap">
+                <ul class="mini_banners" id="roller">
+                    <li class="mini_banner" style="background-color: red"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                    <li class="mini_banner"></li>
+                </ul>
+            </div>
+            <a onclick="rollingRight()">&#10095;</a>
         </div>
+
     </div>
 </th:block>
 </body>

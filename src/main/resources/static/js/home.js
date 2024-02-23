@@ -1,6 +1,7 @@
 window.onload = function() {
     showSlide(1);
     startAutoSlide();
+    cloneRoller();
 }
 
 let slideIndex = 1;
@@ -46,4 +47,15 @@ function autoSlide() {
 
 function startAutoSlide() {
     setInterval(autoSlide, 7000); // 1s = 1000
+}
+
+function cloneRoller() {
+    var roller = document.getElementById('roller');
+    var children = roller.children;
+    var childrenLength = children.length;
+
+    for (var i = 0; i < childrenLength; i++) {
+        var clonedChild = children[i].cloneNode(true);
+        roller.appendChild(clonedChild);
+    }
 }
