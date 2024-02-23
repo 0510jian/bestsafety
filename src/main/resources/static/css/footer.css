@@ -1,5 +1,62 @@
 .footer {
+    position: relative;
+
     width: 100%;
     height: 200px;
-    background-color: pink;
+
+    align-items: center;
+
+    color: white;
+    background-color: #2a2a2a;
+}
+
+.footer_logo {
+    position: absolute;
+    left:3em;
+    top:3em;
+
+    display: inline-block;
+
+    width: 10em;
+    height: 3em;
+}
+.footer_logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer_link {
+    position: absolute;
+    top: 2em;
+    right: 3em;
+
+    color: #5e5e5e;
+    font-size: 1.5em;
+}
+
+.footer_company {
+    position: absolute;
+    left:15em;
+    top: 3em;
+    display: inline-block;
+}
+
+/* tablet landscape */
+@media all and (max-width: 1200px) {
+    .footer {
+        height: auto;
+        padding: 0 1em;
+    }
+    .footer_logo, .footer_link, .footer_company {
+        position: relative;
+        top:0;
+        left:0;
+        right:0;
+
+        margin:1em 0;
+    }
 }

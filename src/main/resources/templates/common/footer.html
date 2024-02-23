@@ -3,10 +3,27 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/src/main/resources/static/css/default.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/footer.css">
 </head>
 <body>
 <th:block th:fragment="footerFragment">
     <div class="footer">
+        <div class="footer_logo">
+            <img th:src="@{/img/logo.png}">
+        </div>
+        <div class="footer_link">
+            <a>개인정보처리방침</a> |
+            <a>이용약관</a> |
+            <a>문의</a> |
+            <a>찾아오시는길</a>
+        </div>
+        <div class="footer_company">
+            <div>대표이사 OOO</div>
+            <div>본사 (우편번호) 주소 | 대표전화 000 | 팩스 OOO</div>
+            <div>COPYRIGHT OO, All rights reserved</div>
+        </div>
     </div>
 </th:block>
 </body>
