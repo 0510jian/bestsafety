@@ -24,8 +24,12 @@ public class Content {
 
     @Column(name="title")
     String title;
+    @Column(name = "content")
     String content;
+
     String createDate;
     String updateDate;
     int viewCount;
+
+    boolean notice;
 }

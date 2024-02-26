@@ -44,4 +44,12 @@ public class DataTest {
     void getContentsTest() throws ParseException {
         dataService.getContents(1, "제목", "3");
     }
+
+    @Test
+    void saveContentTest() {
+        Content content = new Content();
+        content.setTitle("제목입니다2");
+        content.setContent("내용입니다2");
+        dataService.createContent(content);
+    }
 }

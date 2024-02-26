@@ -1,0 +1,42 @@
+.input {
+    margin: 1em 0;
+}
+
+.input input, #summernote {
+    background-color: #eeeeee;
+    padding: 0.5em .5em;
+    border-radius: 0.2em;
+    border: 0px solid black;
+
+    margin-top: 0.2em;
+    width: 100%;
+
+    /* box-shadow: 0 5px 10px -10px; */
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+.input_button {
+    padding: .8em 2em;
+
+    border-radius: .5em;
+    border: 0px solid black;
+    margin: 0 .5em;
+}
+
+#cancel {
+    border: 1px solid #a4a4a4;
+    background-color: transparent;
+}
+
+#submit {
+    background-color: #185b9f;
+    color: white;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+}

@@ -17,16 +17,44 @@
     padding: 0;
 }
 
-html {
+html, body {
     font-family: 'SUIT-Regular', sans-serif;
     color:#3a3a4a;
+    font-size: unset;
+    line-height: unset;
+    background-color: white;
 }
 
 ul, ol {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
     color: #3a3a4a;
+}
+
+.board_header {
+    height: 150px;
+    background-color: violet;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 20px;
+}
+
+.board_margin {
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.board_area {
+    width: 70%;
+    margin: 0 auto;
+    padding: 5em 0;
 }

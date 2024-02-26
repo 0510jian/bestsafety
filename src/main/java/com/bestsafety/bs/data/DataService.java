@@ -75,4 +75,8 @@ public class DataService {
 
         return afterDate;
     }
+
+    public void createContent(Content content) {
+        contentRepository.save(content);
+    }
 }

@@ -9,7 +9,6 @@
 }
 
 .header_item {
-    width: auto;
     display: inline-block;
     vertical-align: middle;
 }
@@ -28,7 +27,6 @@
 #nav {
     width: 50%;
     margin-left: 5rem;
-    /*margin: 0 5rem;*/
 }
 
 .menu {
