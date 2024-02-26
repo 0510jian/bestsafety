@@ -1,15 +1,13 @@
 package com.bestsafety.bs;
 
 import com.bestsafety.bs.data.DataService;
-import com.bestsafety.bs.dto.Content;
+import com.bestsafety.bs.entity.Content;
 import com.bestsafety.bs.repository.ContentRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.sql.Timestamp;
 import java.text.ParseException;
-import java.util.Date;
 
 @SpringBootTest
 public class DataTest {

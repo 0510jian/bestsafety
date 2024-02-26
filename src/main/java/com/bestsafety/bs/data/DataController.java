@@ -1,7 +1,9 @@
 package com.bestsafety.bs.data;
 
-import com.bestsafety.bs.dto.Content;
+import com.bestsafety.bs.entity.Content;
+import com.google.gson.JsonObject;
 import jakarta.servlet.http.HttpServletRequest;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
+import java.util.UUID;
 
 @Controller
 public class DataController {
@@ -63,6 +69,38 @@ public class DataController {
 
         dataService.createContent(createContent);
 
+
         return "redirect:/";
     }
+
+    @PostMapping(value = "/uploadSummernoteImageFile", produces = "application/json")
+    @ResponseBody
+    public JsonObject uploadSummernoteImageFile(
+            @RequestParam("file")MultipartFile multipartFile
+    ) {
+        JsonObject jsonObject = new JsonObject();
+
+        String fileRoot = "C:\\summernote_image\\"; // 이미지가 저장될 폴더
+        String originalFileName = multipartFile.getOriginalFilename(); // 기존 파일 이름
+        String extension = originalFileName.substring(originalFileName.lastIndexOf(".")); // 확장자
+        String savedFileName = UUID.randomUUID() + extension; // 저장될 파일 이름
+
+        File targetFile = new File(fileRoot + savedFileName); // 저장될 파일
+
+        try {
+            InputStream fileStream = multipartFile.getInputStream();
+            FileUtils.copyInputStreamToFile(fileStream, targetFile);
+            jsonObject.addProperty("url", "/summernoteImage/" + savedFileName);
+            jsonObject.addProperty("responseCode", "success");
+
+            dataService.createFile(originalFileName, savedFileName, extension, fileRoot+savedFileName, multipartFile.getSize());
+        } catch (IOException e) {
+            FileUtils.deleteQuietly(targetFile);
+            jsonObject.addProperty("responseCode", "error");
+            e.printStackTrace();
+        }
+
+        return jsonObject;
+    }
 }
+

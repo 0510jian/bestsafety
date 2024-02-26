@@ -1,15 +1,11 @@
-package com.bestsafety.bs.dto;
+package com.bestsafety.bs.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
-
-import java.util.Date;
 
 @Getter
 @Setter
@@ -20,6 +16,7 @@ import java.util.Date;
 @DynamicInsert
 public class Content {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     @Column(name="title")

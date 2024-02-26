@@ -1,7 +1,8 @@
 package com.bestsafety.bs.data;
 
-import com.bestsafety.bs.dto.Content;
+import com.bestsafety.bs.entity.Content;
 
+import com.bestsafety.bs.entity.File;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DataService {
@@ -20,6 +23,8 @@ public class DataService {
 
     @Autowired
     private com.bestsafety.bs.repository.ContentRepository contentRepository;
+    @Autowired
+    private com.bestsafety.bs.repository.FileRepository fileRepository;
 
     public Page<Content> getContents(int page) throws ParseException {
         Pageable pageable = PageRequest.of(page,10);
@@ -77,6 +82,35 @@ public class DataService {
     }
 
     public void createContent(Content content) {
-        contentRepository.save(content);
+        int contentId;
+
+        contentId = contentRepository.save(content).getId();
+        System.out.println("????????????" + contentId);
+        updateFile(contentId);
+    }
+
+    /*
+     * 임시 id(-1)인 file db 값들을 등록된 content의 id값으로 변경해주는 함수
+     *
+     * @param contentId(등록한 content id)
+     */
+    public void updateFile(int contentId) {
+        Optional<File> files = fileRepository.findByContentId(-1);
+        files.ifPresent(file -> {
+            file.setContentId(contentId);
+            fileRepository.save(file);
+        });
+    }
+
+    public void createFile(String originalFileName, String savedFileName, String extension, String location, long size) {
+        File file = new File();
+        file.setOriginalName(originalFileName);
+        file.setSaveName(savedFileName);
+        file.setExtension(extension);
+        file.setLocation(location);
+        file.setFilesize(size);
+        file.setContentId(-1);
+
+        fileRepository.save(file);
     }
 }

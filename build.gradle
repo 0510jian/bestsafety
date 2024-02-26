@@ -36,6 +36,9 @@ dependencies {
 	implementation 'org.hibernate.orm:hibernate-core'
 	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
 
+	implementation 'commons-io:commons-io:2.11.0'// file upload, download
+	implementation 'com.google.code.gson:gson' // java object <-> json object
+
 }
 
 tasks.named('test') {

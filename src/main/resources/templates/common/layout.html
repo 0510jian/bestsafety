@@ -3,8 +3,8 @@
 <head>
 </head>
 <body>
-<th:block th:replace="common/header :: headerFragment"></th:block>
+<th:block th:replace="~{common/header :: headerFragment}"></th:block>
 <th:block layout:fragment="content"></th:block>
-<th:block th:replace="common/footer :: footerFragment"></th:block>
+<th:block th:replace="~{common/footer :: footerFragment}"></th:block>
 </body>
 </html>
