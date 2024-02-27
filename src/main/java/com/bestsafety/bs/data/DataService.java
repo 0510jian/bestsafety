@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,8 +25,8 @@ public class DataService {
     @Autowired
     private com.bestsafety.bs.repository.FileRepository fileRepository;
 
-    public Page<Content> getContents(int page) throws ParseException {
-        Pageable pageable = PageRequest.of(page,10);
+    public Page<Content> readContents(int presentPage) throws ParseException {
+        Pageable pageable = PageRequest.of(presentPage,10);
         Page<Content> contents = contentRepository.findAll(pageable);
 
         for(Content content : contents) {
@@ -38,8 +37,8 @@ public class DataService {
         return contents;
     }
 
-    public Page<Content> getContents(int page, String select, String search) throws ParseException {
-        Pageable pageable = PageRequest.of(page,10);
+    public Page<Content> readContents(int presentPage, String select, String search) throws ParseException {
+        Pageable pageable = PageRequest.of(presentPage,10);
 
         Page<Content> contents = null;
         search = "%" + search + "%";
@@ -56,6 +55,11 @@ public class DataService {
         }
 
         return contents;
+    }
+
+    public Content readContent(int id) {
+        Content content = contentRepository.findById(id).orElse(null);
+        return content;
     }
 
     /*
@@ -85,7 +89,6 @@ public class DataService {
         int contentId;
 
         contentId = contentRepository.save(content).getId();
-        System.out.println("????????????" + contentId);
         updateFile(contentId);
     }
 

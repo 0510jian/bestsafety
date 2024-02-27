@@ -1,0 +1,16 @@
+#update {
+    margin-top:0;
+}
+
+.next_title, .prev_title {
+    display: inline-block;
+}
+
+.bold {
+    display: inline-block;
+    font-weight: bolder;
+    margin-right: 2em;
+}
+.button_area {
+    text-align: right;
+}

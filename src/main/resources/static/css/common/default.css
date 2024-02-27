@@ -58,3 +58,39 @@ a {
     margin: 0 auto;
     padding: 5em 0;
 }
+
+.board_area > div {
+    margin: 1rem 0;
+}
+
+.board_header_text {
+    color: white;
+    text-align: center;
+}
+
+.board_header_title {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.board_title {
+    font-size: 3em;
+    font-weight: 900;
+    border-bottom: 1px solid #afafaf;
+}
+
+.board_date {
+    text-align: right;
+    color: #7a7a7a;
+}
+
+.board_content {
+    border-bottom: 1px solid #afafaf;
+    padding-bottom: 1em;
+}
+
+.button_white {
+    display: inline-block;
+    padding: 0.8em 2.2em;
+    border: 1px solid #4d4d4d;
+}

@@ -1,16 +1,14 @@
 package com.bestsafety.bs.data;
 
 import com.bestsafety.bs.entity.Content;
+import com.bestsafety.bs.repository.ContentRepository;
 import com.google.gson.JsonObject;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,6 +23,8 @@ public class DataController {
 
     @Autowired
     DataService dataService;
+    @Autowired
+    ContentRepository contentRepository;
 
     @GetMapping("/data")
     public ModelAndView data(
@@ -37,13 +37,31 @@ public class DataController {
 
         Page<Content> contents;
         if(!search.equals("")) {
-            contents = dataService.getContents(page-1, select, search);
+            contents = dataService.readContents(page-1, select, search);
         } else {
-            contents = dataService.getContents(page-1);
+            contents = dataService.readContents(page-1);
         }
 
         mv.addObject("contents", contents);
         mv.addObject("count", page);
+
+        return mv;
+    }
+
+    @GetMapping("/data/{id}")
+    public ModelAndView readData(
+            HttpServletRequest request,
+            @PathVariable("id") int id
+    ) throws Exception {
+        ModelAndView mv = new ModelAndView("/data/detail.html");
+
+        Content content = dataService.readContent(id);
+        Content prevContent = dataService.readContent(id-1);
+        Content nextContent = dataService.readContent(id+1);
+
+        mv.addObject("content", content);
+        mv.addObject("prev", prevContent);
+        mv.addObject("next", nextContent);
 
         return mv;
     }
@@ -70,7 +88,7 @@ public class DataController {
         dataService.createContent(createContent);
 
 
-        return "redirect:/";
+        return "redirect:/data";
     }
 
     @PostMapping(value = "/uploadSummernoteImageFile", produces = "application/json")

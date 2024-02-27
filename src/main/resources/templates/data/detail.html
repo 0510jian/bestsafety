@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="common/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/src/main/resources/static/css/common/default.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/data/detail.css">
+    <link rel="stylesheet" th:href="@{/css/common/default.css}">
+    <link rel="stylesheet" th:href="@{/css/data/detail.css}">
+    <link rel="stylesheet" th:href="@{/css/common/header.css}">
+    <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+</head>
+<body>
+
+<th:block layout:fragment="content">
+    <div class="main">
+        <div class="board_header" id="data">
+            <div class="board_header_text">
+                <div class="board_header_title" th:value="${boardTitle}">
+                    자료실
+                </div>
+                <div class="board_header_address">
+                    <span>홈</span> > <span>자료실</span>
+                </div>
+            </div>
+        </div>
+        <div class="board_margin">
+            <div class="board_area">
+                <div class="board_title" th:text="${content.title}">제목</div>
+                <div class="board_date" id="create" th:text="${'등록일 : ' + content.createDate}">등록일 : 1990-01-01 00:00:00</div>
+                <div class="board_date" id="update" th:if="${content.updateDate != null}" th:text="${'수정일 : ' + content.updateDate}">수정일 : 1990-01-01 00:00:00</div>
+                <div class="board_content" id="content" th:utext="${content.content}">내용</div>
+
+                <th:block th:unless="${prev==null}">
+                    <div class="board_prev">
+                        <div class="bold">&#9206; 이전글</div>
+                        <a th:href="'/data/' + ${prev.id}"><div class="prev_title" th:text="${prev.title}">제목</div></a>
+                    </div>
+                </th:block>
+                <th:block th:unless="${next==null}">
+                    <div class="board_next">
+                        <div class="bold">&#9207; 다음글</div>
+                        <a th:href="'/data/' + ${next.id}"><div class="next_title" th:text="${next.title}">제목</div></a>
+                    </div>
+                </th:block>
+
+                <div class="button_area">
+                    <a href="/data"><div class="button_white" id="golist">목록</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>
