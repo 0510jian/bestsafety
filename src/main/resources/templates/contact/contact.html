@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="common/layout">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/src/main/resources/static/css/common/default.css">
+  <link rel="stylesheet" href="/src/main/resources/static/css/common/board.css">
+
+  <link rel="stylesheet" th:href="@{/css/common/default.css}">
+  <link rel="stylesheet" th:href="@{/css/common/header.css}">
+  <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/common/board.css}">
+</head>
+<body>
+
+<th:block layout:fragment="content">
+  <div class="main">
+    <div class="board_header" id="data">
+      <div class="board_header_text">
+        <div class="board_header_title" th:value="${boardTitle}">
+          자료실
+        </div>
+        <div class="board_header_address">
+          <span>홈</span> > <span>문의</span>
+        </div>
+      </div>
+    </div>
+    <div class="board_margin">
+      <div class="board_area">
+      </div>
+    </div>
+  </div>
+</th:block>
+</body>
+</html>
