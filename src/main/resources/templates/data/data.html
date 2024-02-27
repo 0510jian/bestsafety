@@ -5,12 +5,17 @@
   <title>베스트안전 - 자료실</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="/src/main/resources/static/css/common/default.css">
-  <link rel="stylesheet" href="/src/main/resources/static/css/data/data.css">
+  <link rel="stylesheet" href="/src/main/resources/static/css/common/board.css">
+
   <link rel="stylesheet" th:href="@{/css/common/default.css}">
-  <link rel="stylesheet" th:href="@{/css/data/data.css}">
   <link rel="stylesheet" th:href="@{/css/common/header.css}">
   <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/common/board.css}">
+
+  <script src="/src/main/resources/static/js/board.js"></script>
+  <script th:src="@{/js/board.js}"></script>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -29,56 +34,56 @@
       <div class="board_area">
         <div class="search">
           <form method="get">
-            <select name="select" class="search_select">
+            <select name="search_select" class="search_select">
               <option value="제목">제목</option>
               <option value="내용">내용</option>
             </select>
-            <input type="text" name="search" class="search_input">
+            <input type="text" name="search_input" class="search_input">
             <input type="submit" class="search_button" value="검색">
           </form>
         </div>
 
-        <ul class="board_titlebar">
-          <li class="id">번호</li>
-          <li class="title">제목</li>
-          <li class="create_date">등록일</li>
-          <li class="view_count">조회</li>
+        <ul class="titlebar">
+          <li class="titlebar_id">번호</li>
+          <li class="titlebar_title">제목</li>
+          <li class="titlebar_create">등록일</li>
+          <li class="titlebar_count">조회</li>
         </ul>
-        <div class="board_contents">
+        <div class="list">
           <th:block th:unless="${contents.isEmpty()}">
             <th:block th:each="content:${contents}">
-              <ul class="board_content">
-                <li class="id" th:text="${content.id}">0</li>
-                <a th:href="${'data/' + content.id}"><li class="title" th:text="${content.title}">제목</li></a>
-                <li class="create_date" th:text="${content.createDate}">1900-01-01</li>
-                <li class="view_count" th:text="${content.viewCount}">0</li>
+              <ul class="list_item">
+                <li class="list_id" th:text="${content.id}">0</li>
+                <a th:href="${'data/' + content.id}"><li class="list_title" id="list_title" th:text="${content.title}">제목</li></a>
+                <li class="list_create" th:text="${content.createDate}">1900-01-01</li>
+                <li class="list_count" th:text="${content.viewCount}">0</li>
               </ul>
             </th:block>
 
             <ul class="pagination">
               <input type="hidden" value="">
-              <li class="page-item" th:if="${contents.hasPrevious} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=1|}">
-                  <span>&lt;&lt;</span>
+              <li class="page_item" th:if="${contents.hasPrevious} ? 'disabled'">
+                <a class="page_link" th:href="@{|?page=1|}">
+                  <span class="page_icon">&lt;&lt;</span>
                 </a>
               </li>
-              <li class="page-item" th:if="${contents.hasPrevious} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${contents.number}|}">
-                  <span>&lt;</span>
+              <li class="page_item" th:if="${contents.hasPrevious} ? 'disabled'">
+                <a class="page_link" th:href="@{|?page=${contents.number}|}">
+                  <span class="page_icon">&lt;</span>
                 </a>
               </li>
               <li class="page_count" th:id="${'count' + (page+1)}" th:each="page: ${#numbers.sequence(0, contents.totalPages -1)}"
                   th:if="${page >= contents.number - 5 and page <= contents.number+5}">
                 <a th:text="${page + 1}" th:id="${'page' + (page+1)}" th:href="'?page=' + ${page+1}">1</a>
               </li>
-              <li class="page-item" th:if="${contents.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${contents.number+2}|}">
-                  <span>&gt;</span>
+              <li class="page_item" th:if="${contents.hasNext} ? 'disabled'">
+                <a class="page_link" th:href="@{|?page=${contents.number+2}|}">
+                  <span class="page_icon">&gt;</span>
                 </a>
               </li>
-              <li class="page-item" th:if="${contents.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${contents.totalPages}|}">
-                  <span>&gt;&gt;</span>
+              <li class="page_item" th:if="${contents.hasNext} ? 'disabled'">
+                <a class="page_link" th:href="@{|?page=${contents.totalPages}|}">
+                  <span class="page_icon">&gt;&gt;</span>
                 </a>
               </li>
             </ul>
@@ -92,12 +97,5 @@
 </html>
 
 <script>
-  window.onload = function() {
-    changePageCount();
-  }
-
-  function changePageCount() {
-    document.getElementById("count" + [[${count}]]).style.background = "gray";
-    document.getElementById("page" + [[${count}]]).style.color = "white";
-  }
+  var count = [[${count}]];
 </script>

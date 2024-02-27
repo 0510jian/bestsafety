@@ -1,0 +1,180 @@
+/* 게시판 헤더 */
+
+.board_header {
+    height: 10em;
+    background-color: violet;
+    padding-bottom: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board_header_text {
+    color: white;
+    text-align: center;
+}
+
+.board_header_title {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+/* 게시판 기본 여백 */
+
+.board_margin {
+    background-color: white;
+    margin-top: -1em;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.board_area {
+    width: 70%;
+    margin: 0 auto;
+    padding: 5em 0;
+}
+
+/* 게시판 목록 - header */
+.titlebar {
+    border-top: 2px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: rgb(240, 240, 240);
+
+    width: 100%;
+    font-weight: bold;
+}
+
+.titlebar li, .list_item li {
+    display: inline-block;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* 게시판 목록 */
+.list_item {
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.titlebar_id, .list_id {
+    width: 10%;
+}
+
+.titlebar_title, .list_title {
+    width: 55%;
+}
+
+.titlebar_create, .list_create {
+    width: 20%;
+}
+
+.titlebar_count, .list_count {
+    width: 10%;
+}
+
+#list_title {
+    text-align: left;
+}
+
+/* 검색창 */
+.search {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.search_select {
+    width: 6em;
+    height: 2.6em;
+    padding: 0.3em;
+    margin-right: 0.5em;
+    border-radius: 0;
+}
+
+.search_input {
+    height: 2.5em;
+    width: 20em;
+
+    border: 1px solid gray;
+    padding: 0 0.6em;
+    margin-right: 0.5em;
+}
+
+.search_button {
+    height: 2.7em;
+    line-height: 2.6em;
+    vertical-align: middle;
+
+    border: none;
+    background-color: gray;
+    padding: 0 1.5em;
+    color: white;
+}
+
+
+
+/* 게시글 상세 */
+.content > div {
+    padding: 1rem 0;
+}
+
+.content_title {
+    font-size: 3em;
+    font-weight: 900;
+
+}
+
+.content_date {
+    text-align: right;
+    color: #7a7a7a;
+}
+
+.content_content, .content_title {
+    border-bottom: 1px solid #afafaf;
+}
+
+#update {
+    padding-top:0;
+}
+
+/* 이전 다음 게시글 */
+
+.next_title, .prev_title {
+    display: inline-block;
+}
+
+.bold {
+    display: inline-block;
+    font-weight: bolder;
+    margin-right: 2em;
+}
+.button_area {
+    text-align: right;
+}
+
+
+/* 페이지네이션 */
+
+.page_item, .page_count{
+    display: inline-block;
+    padding: 0.1em 0.6em;
+    margin: 0.5em;
+}
+
+.page_count {
+    box-sizing: border-box;
+    border-radius: 1em;
+    width: auto;
+    height: 1.5em;
+}
+
+.page_item, .page_icon {
+    background-color: gray;
+    color: white;
+}
+
+.pagination {
+    text-align: center;
+    padding: 1em 0;
+    border-top: 1px solid gray;
+}

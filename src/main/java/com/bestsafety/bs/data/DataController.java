@@ -30,8 +30,8 @@ public class DataController {
     public ModelAndView data(
             HttpServletRequest request,
             @RequestParam(name = "page", defaultValue = "1") int page,
-            @RequestParam(name = "select", defaultValue = "") String select,
-            @RequestParam(name = "search", defaultValue = "") String search
+            @RequestParam(name = "search_select", defaultValue = "") String select,
+            @RequestParam(name = "search_input", defaultValue = "") String search
     ) throws ParseException {
         ModelAndView mv = new ModelAndView("/data/data.html");
 
