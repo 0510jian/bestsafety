@@ -10,29 +10,35 @@
 <body>
 <th:block th:fragment="headerFragment">
     <div class="header">
-        <div class="header_item" id="logo">
-            <a href="/">
-                <img th:src="@{/img/logo.png}">
-            </a>
-        </div>
-        <div class="header_item" id="nav">
-            <ul class="menu">
-                <li class="menu_item">
-                    <a href="/company">회사소개</a>
-                </li>
-                <li class="menu_item">
-                    <a href="">사업분야</a>
-                </li>
-                <li class="menu_item">
-                    <a href="/data">뉴스룸</a>
-                </li>
-                <li class="menu_item">
-                    <a href="/contact">고객지원</a>
-                </li>
-            </ul>
-        </div>
-        <div class="header_item" id="mob_cate_button">
-            <img th:src="@{/img/menu.png}">
+        <div class="header_area">
+            <div class="header_item" id="logo">
+                <a href="/">
+                    <img th:src="@{/img/logo.png}">
+                </a>
+            </div>
+            <div class="header_item" id="nav">
+                <ul class="menu">
+                    <li class="menu_item">
+                        <a href="/company">회사소개</a>
+                    </li>
+                    <li class="menu_item">
+                        <a href="">사업분야</a>
+                    </li>
+                    <li class="menu_item">
+                        <a href="/data">뉴스룸</a>
+                    </li>
+                    <li class="menu_item">
+                        <a href="/contact">고객지원</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header_item" id="mob_cate_button">
+                <img th:src="@{/img/menu.png}">
+            </div>
+
+            <div class="menu_desc">
+
+            </div>
         </div>
     </div>
 </th:block>
