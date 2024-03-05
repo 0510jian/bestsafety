@@ -1,10 +1,3 @@
-window.onload = function() {
-    showSlide(1);
-    startAutoSlide();
-    cloneRoller();
-    resizeHeaderMenuItem();
-}
-
 let slideIndex = 1;
 
 function moveSlide(num) {
@@ -61,15 +54,37 @@ function cloneRoller() {
     }
 }
 
-function resizeHeaderMenuItem() {
-    var logo = document.querySelector('#logo');
-    var header = document.querySelector('.header_area');
-    var menu = document.querySelector('.menu').childElementCount;
+const blank = 20;
 
-    var length = ((header.offsetWidth - logo.offsetWidth) - (header.offsetWidth / 10)) / menu;
-    var menuItems = document.querySelectorAll('.menu_item');
+function resize() {
+    resizeField();
+    resizeBoard();
+}
 
-    for(var i=0; i<menuItems.length; i++) {
-        menuItems[i].style.width = length + "px";
+
+
+function resizeField() {
+    var field = document.querySelector('.field');
+    var fieldShortcuts = document.querySelectorAll('.field_shortcut');
+
+    var fieldLength = Math.floor((field.offsetWidth - (blank * (fieldShortcuts.length - 1))) / fieldShortcuts.length) - 3;
+
+    for(var i=0; i<fieldShortcuts.length; i++) {
+        fieldShortcuts[i].style.width = fieldLength + "px";
+        if(i == fieldShortcuts.length-1) continue;
+        fieldShortcuts[i].style.marginRight = blank + "px";
+    }
+}
+
+function resizeBoard() {
+    var boards = document.querySelector('.boards');
+    var board = document.querySelectorAll('.board');
+
+    var boardLength = Math.floor((boards.offsetWidth - (blank * (board.length - 1))) / board.length) - 3;
+
+    for(var i=0; i<board.length; i++) {
+        board[i].style.width = boardLength + "px";
+        if(i == board.length-1) continue;
+        board[i].style.marginRight = blank + "px";
     }
 }

@@ -30,6 +30,7 @@
 }
 
 .board_area {
+    margin-top: -1em;
     width: 70%;
     margin: 0 auto;
     padding: 5em 0;
